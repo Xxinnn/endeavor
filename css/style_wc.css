@@ -1,0 +1,97 @@
+h1
+
+h2{
+    font-size: 1.5em;
+}
+
+body {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #E9EBEC;
+    background-image: url(background.png);
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.robby{
+    z-index: 3;
+    position: absolute;
+    top: 606px;
+    left: 135px;
+}
+.container {
+    margin-left: 7%;
+    margin-right: 7%;
+/*    width: 100vw;*/
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(15,1fr);
+}
+
+nav {
+    height: 10vh;
+    background-color: #2B3B63;
+}
+
+nav ul {
+    padding: 7vh 90px;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+nav ul li a{
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 20px;
+}
+ul li.point {
+    float: right;
+}
+#treasure {
+    color: #F5D14B;
+}
+#readToMe:hover{
+    cursor: pointer;
+}
+iframe {
+    grid-column: 3 / 11;
+    grid-row: 2 / 15;
+    position: relative;
+    top: 32px;
+}
+
+
+/*
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    float: left;
+    width: 50%;
+    padding: 0 0 0 20%;
+    height: 8vh;
+}
+
+.gamification::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+*/
+.gamification{
+    height: 40px;
+}
+
+.robby{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 30px; */
+}
+#robby{
+    height: 230px;
+}

@@ -1,0 +1,186 @@
+body{
+    background-color: #2B3B63;   
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+nav {
+    height: 92px;
+    background-color: #2B3B63;
+    box-shadow: 0 2px 4px 0 #2B313F;
+}
+h3{
+    color: #2B3B63;	
+    font-size: 26px;	
+    font-weight: 800;	
+    line-height: 36px;
+    font-family: 'Open Sans', sans-serif;
+}
+h4{
+    color: #393C3C;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 19px;
+}
+p{
+    color: #393C3C;	
+    font-family: "Open Sans";	
+    font-size: 18px;	
+    line-height: 1.4;
+}
+nav ul {
+    padding: 32px 136px;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+nav ul li a{
+    font-size: 26px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+.log{
+    float: right;
+    
+}
+
+.container{
+    display: grid;
+    margin-left: 24px;
+    margin-right: 24px;
+    grid-template-columns: repeat(12, 1fr);
+}
+.filter{
+    grid-column: 2 / 12;
+}
+
+.heading{
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 24px;
+    margin-top: 24px;
+    margin-bottom: 14px;
+}
+.island{
+    background-color: white;
+    border-radius: 8px;
+    height: 361px;
+    
+}
+.island_pic{
+    float: left;
+    margin-right: 48px;
+}
+
+.story h3{
+    padding: 32px 0 8px;
+    
+}
+
+.desc{
+    margin-top: 24px;
+    width: 1085px;
+/*    font-size: 14px;*/
+}
+.name{
+    color: #2B3B63;
+    font-weight: 600;
+}
+button{
+    float: right;
+    border-radius: 20px;
+    font-size: 18px;	
+    font-weight: 600;	
+    line-height: 24px;
+    padding: 8px 24px;
+    margin-top: 69px;
+    margin-right: 24px;
+    border: 1px solid #F26434;
+}
+.check{
+    color: #F26434;
+}
+.read{
+    background-color: #F26434;
+    color: white;
+}
+.read:hover{
+    background-color: #D14B1E;
+    cursor: pointer;
+}
+
+.rocket{
+    position: absolute;
+    background-color: white;
+    height: 307px;	
+    width: 550px;	
+    border-radius: 8px;
+    margin-right: 25px;
+}
+.rocket_pic{
+    float: left;
+    margin-right: 48px;
+    position: relative;
+    left: -20px;
+    
+}
+.crop {
+    float: left;
+    margin-right: 16px;
+    width: 227px;
+    height: 307px;
+    overflow: hidden;
+    border-radius: 8px 0 0 8px;
+}
+
+.crop img {
+    width: 325px;
+    height: 325px;
+    margin: 0px 0 0 -40px;
+}
+
+.desc_rocket{
+    width: 530px;
+    margin-top: 16px;
+    font-size: 14px;
+}
+button.start {
+    clear: both;
+    position: relative;
+    top: -80px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #F26434;
+    margin-right: 16px;
+}
+
+.rocket h3{
+    width: 450px;
+    margin-top: -24px;
+    font-size: 21px;
+}
+.zoo{
+    background-color: white;
+    height: 307px;	
+    width: 550px;	
+    border-radius: 8px;
+    float: right;
+    position: relative;
+    top: 0;
+}
+.zoo h3{
+    width: 450px;
+    margin-top: -24px;
+    font-size: 21px;
+}
+.desc_zoo{
+    width: 535px;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.follow{
+    height: 80px;
+}

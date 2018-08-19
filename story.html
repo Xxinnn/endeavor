@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            prototype
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style_wc.css">
+    </head>
+    
+    <body>
+<!--
+      <section class="robby">
+          <img src="roboto-logo.svg" height=98 width=74>
+      </section>
+-->
+       <nav>
+            <ul>
+                <li>
+                    <a>Home</a>
+                </li>
+                <li>
+                    <a>>&emsp;Story</a>
+                </li>
+                <li>
+                    <a>>&emsp;The Island's Secret</a>
+                </li>
+                <li class="point">
+                   <img id="readToMe" src="img/Read-orange.png"  style="margin-right: 40px;" height=30>
+                    <img src="img/Coins.png" width=25 height=25 style="padding: 0 0 0 0;" />&ensp;
+                    <a><span id="treasure" style="font-size: 29px; margin-bottom: 5px;">0</span></a>
+<!--                    <a><span id="wholePoints">0 Point</span></a>-->
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+          <iframe src="island_secret.html" id="twine" width=870 height=644>
+<!--                   <iframe src="Island_Secret_Short%20(1).html" id="twine" width=870 height=644>-->
+             </iframe>
+           
+            
+        </div>
+    </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/papaparse.min.js"></script>
+    <script>
+        var myData = []
+    $(document).ready(function(){
+        $('#click').on('click',function(){
+            var myIframe=$('#twine')[0];
+            myIframe.contentWindow.postMessage('hello','*');
+        });
+        window.onmessage=function(e){
+                if(e.data == 'bye') {
+                    console.log('It works');
+                }
+            }
+    });
+        
+        var treasure;
+//        var array=[];
+//        array.push();
+//        console.log(array);
+        
+        //var seconds = new Date().getTime() / 1000;
+//        if(answer==='Hello Robby')  {
+//            $('#twine').hide();
+//        }
+        window.addEventListener('message', function(event) {
+//            if(event.data.event_id === 'my_cors_message_wc1'){
+//                setTimeout(
+//                    function(){
+//                    },300);
+//                
+//                console.log(event.data.data);
+//                myData = event.data.data.v1;
+//            }
+            //breakPoint="here";
+            
+            
+            
+            //maze
+                    if(event.data.event_id == 'best'){
+                        treasure=1000;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                        localStorage.setItem('treasure', treasure);
+                    } 
+                    ;
+                    
+                    if(event.data.event_id =='good'){
+                        treasure=800;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                        localStorage.setItem('treasure', treasure);
+                    }
+            
+//                    treasure = parseInt(localStorage.getItem("treasure"));
+            
+                    if(event.data.event_id =='decent'){
+                        treasure=500;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                        localStorage.setItem('treasure', treasure);
+                    } 
+                    if(event.data.event_id =='poor'){
+                        treasure=300;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                        localStorage.setItem('treasure', treasure);
+                    }
+                    if(event.data.event_id =='double'){
+                        
+                        treasure = treasure*2;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                        
+                    }
+                    
+                    if(event.data.event_id =='one_and_half'){
+                        treasure = treasure*1.5;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    } 
+            
+                    //give
+                    if(event.data.event_id =='give_half'){
+                        treasure = treasure/2;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                        
+                    } 
+                    if(event.data.event_id =='give_little'){
+                        treasure = treasure-treasure*0.1;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    }
+                    
+                    //pirate
+                    if(event.data.event_id =='pirate-good'){
+                        treasure = treasure-treasure*0.1;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    } 
+                    if(event.data.event_id =='pirate-decent'){
+                        treasure = treasure-treasure*0.2;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    }
+                    if(event.data.event_id =='pirate-poor'){
+                        treasure = treasure-treasure*0.4;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    }
+            
+                    if(event.data.event_id =='end')  {
+                        window.location.href= "index.html";
+                    }
+            
+//                    if(event.data.event_id =='double'){
+//                        
+//                        treasure = treasure*2;
+//                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                        
+//                    }
+//                    
+//                    if(event.data.event_id =='one_and_half'){
+//                        treasure = treasure*1.5;
+//                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                    } 
+//                    
+//                    //give
+//                    if(event.data.event_id =='give_half'){
+//                        treasure = treasure/2;
+//                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                        
+//                    } 
+//                    if(event.data.event_id =='give_little'){
+//                        treasure = treasure-treasure*0.1;
+//                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+//                    }
+//                    
+                    //pirate
+                    if(event.data.event_id =='pirate-good'){
+                        treasure = treasure-treasure*0.1;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    } 
+                    if(event.data.event_id =='pirate-decent'){
+                        treasure = treasure-treasure*0.2;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    }
+                    if(event.data.event_id =='pirate-poor'){
+                        treasure = treasure-treasure*0.4;
+                        $("#treasure").replaceWith("<span id='treasure'>"+ treasure + "</span>");
+                    }
+                    
+        });
+        
+        function pushWord(word) {
+            seconds = new Date().getTime() / 1000 | 0;
+            myData.push([word, seconds])
+        }
+        
+//        function showTwine() {
+//             var myIframe=$('#twine')[0];
+//            myIframe.contentWindow.postMessage(
+//                        {
+//                            event_id: 'show_twine',
+//                            data: {
+//                                v1: myData, 
+//                                v2: 'value2'
+//                            }
+//                        }, 
+//                        "*" //or "www.parentpage.com"
+//                        ); 
+//        }
+
+    </script>
+</html>
